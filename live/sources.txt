@@ -7,3 +7,5 @@
 # 示例（删掉行首 # 才生效）：
 # 自建源	https://raw.githubusercontent.com/<你的另一个仓库>/main/live.m3u
 # 备用源	https://example.com/iptv/all.m3u
+
+# 触发健康看板生成 2026-11-17_2207
