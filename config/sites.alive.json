@@ -1,0 +1,30 @@
+[
+  {
+    "key": "demo-json",
+    "name": "示例 JSON 接口（请替换）",
+    "type": 1,
+    "api": "https://example.com/api.php/provide/vod/",
+    "searchable": 1,
+    "quickSearch": 1,
+    "disabled": true,
+    "probe": {
+      "state": "skip",
+      "why": "disabled",
+      "at": "2026-11-17T08:31:04Z"
+    }
+  },
+  {
+    "key": "demo-jar",
+    "name": "示例爬虫接口（请替换）",
+    "type": 3,
+    "api": "csp_Demo",
+    "searchable": 1,
+    "quickSearch": 1,
+    "disabled": true,
+    "probe": {
+      "state": "skip",
+      "why": "disabled",
+      "at": "2026-11-17T08:31:04Z"
+    }
+  }
+]
