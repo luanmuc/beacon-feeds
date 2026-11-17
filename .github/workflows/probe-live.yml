@@ -48,6 +48,7 @@ jobs:
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push
 
+      - name: Publish to beacon-seed
         env:
           TOKEN: ${{ secrets.TV_SEED_TOKEN }}
         run: |
