@@ -54,7 +54,7 @@ jobs:
         run: |
           set -e
           cd /tmp && rm -rf seed
-          git clone -q "https://x-access-token:${TOKEN}@github.com/luanmuc/tv-seed.git" seed
+          git clone -q "https://x-access-token:${TOKEN}@github.com/luanmuc/beacon-seed.git" seed
           cp "$GITHUB_WORKSPACE/tvbox.json" seed/tvbox.json
           if [ -f "$GITHUB_WORKSPACE/live/all.m3u" ]; then cp "$GITHUB_WORKSPACE/live/all.m3u" seed/live.m3u; fi
           cd seed
