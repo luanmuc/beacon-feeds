@@ -1,0 +1,45 @@
+name: probe-live
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"      # 每 6 小时
+  workflow_dispatch:
+  push:
+    paths:
+      - "live/sources.txt"
+      - "scripts/probe_live.py"
+      - "scripts/build_config.py"
+      - "config/base.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-live
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe live sources
+        run: python3 scripts/probe_live.py --input live/sources.txt --out live/all.m3u --report live/report.json
+      - name: Build tvbox.json
+        env:
+          RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+        run: python3 scripts/build_config.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add live tvbox.json
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "chore(live): probe $(date -u +%F_%H:%M)"
+            git push
+          fi

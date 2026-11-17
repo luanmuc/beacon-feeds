@@ -1,0 +1,43 @@
+name: probe-vod
+
+on:
+  schedule:
+    - cron: "0 19 * * *"       # 每天 19:00 UTC = 次日 03:00 CST
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/sites.json"
+      - "scripts/probe_vod.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-vod
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Probe VOD sites
+        run: python3 scripts/probe_vod.py --input config/sites.json --alive config/sites.alive.json --dead config/sites.dead.json
+      - name: Build tvbox.json
+        env:
+          RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+        run: python3 scripts/build_config.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config tvbox.json
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "chore(vod): probe $(date -u +%F)"
+            git push
+          fi

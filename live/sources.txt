@@ -1,0 +1,9 @@
+# 直播候选源清单（每行一个）
+# 格式：<名字>\t<m3u 地址>    或直接写 <m3u 地址>
+# '#' 开头为注释，不会被拉取。
+# 本地文件也可以（调试用）：把路径直接写在这一行，例如 ./seed/xxx.m3u
+#
+# 填入你自己的候选源后，probe-live 会：拉取 -> 解析 -> 逐路探测 -> 合并同名 -> 写 live/all.m3u
+# 示例（删掉行首 # 才生效）：
+# 自建源	https://raw.githubusercontent.com/<你的另一个仓库>/main/live.m3u
+# 备用源	https://example.com/iptv/all.m3u

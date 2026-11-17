@@ -1,0 +1,13 @@
+{
+  "name": "自订 TV 源",
+  "spider": "",
+  "lives": [
+    {
+      "name": "电视台",
+      "url": "{RAW_BASE}/live/all.m3u",
+      "ua": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"
+    }
+  ],
+  "parses": [],
+  "flags": []
+}
