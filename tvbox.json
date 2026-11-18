@@ -9,6 +9,72 @@
   ],
   "name": "自订 TV 源",
   "parses": [],
-  "sites": [],
+  "sites": [
+    {
+      "api": "https://xy.183933.xyz/php/acfun.php/provide/vod",
+      "key": "pub1",
+      "name": "A站｜星源",
+      "probe": {
+        "at": "2026-11-18T09:26:26Z",
+        "state": "ok",
+        "why": "keys=['class']"
+      },
+      "quickSearch": 1,
+      "searchable": 1,
+      "type": 1
+    },
+    {
+      "api": "https://xy.183933.xyz/php/ls.php/vod",
+      "key": "pub2",
+      "name": "小乐｜星源",
+      "probe": {
+        "at": "2026-11-18T09:26:26Z",
+        "state": "ok",
+        "why": "keys=['class']"
+      },
+      "quickSearch": 1,
+      "searchable": 1,
+      "type": 1
+    },
+    {
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "key": "pub3",
+      "name": "❤红牛资源",
+      "probe": {
+        "at": "2026-11-18T09:26:26Z",
+        "state": "ok",
+        "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']"
+      },
+      "quickSearch": 1,
+      "searchable": 1,
+      "type": 1
+    },
+    {
+      "api": "https://api.wujinapi.me/api.php/provide/vod/?ac=list",
+      "key": "pub4",
+      "name": "❤无尽资源",
+      "probe": {
+        "at": "2026-11-18T09:26:26Z",
+        "state": "ok",
+        "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']"
+      },
+      "quickSearch": 1,
+      "searchable": 1,
+      "type": 1
+    },
+    {
+      "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
+      "key": "pub6",
+      "name": "❤淘片资源",
+      "probe": {
+        "at": "2026-11-18T09:26:26Z",
+        "state": "ok",
+        "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']"
+      },
+      "quickSearch": 1,
+      "searchable": 1,
+      "type": 1
+    }
+  ],
   "spider": ""
 }

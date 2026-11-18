@@ -9,3 +9,7 @@
 # 备用源	https://example.com/iptv/all.m3u
 
 # 触发健康看板生成 2026-11-17_2207
+
+# 公开源：iptv-org（开源 IPTV 清单，仅收录公开流）
+iptv-org-CN	https://iptv-org.github.io/iptv/countries/cn.m3u
+iptv-org-HK	https://iptv-org.github.io/iptv/countries/hk.m3u

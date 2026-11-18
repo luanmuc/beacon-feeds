@@ -1,5 +1,70 @@
 [
   {
+    "key": "pub1",
+    "name": "A站｜星源",
+    "type": 1,
+    "api": "https://xy.183933.xyz/php/acfun.php/provide/vod",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "ok",
+      "why": "keys=['class']",
+      "at": "2026-11-18T09:26:26Z"
+    }
+  },
+  {
+    "key": "pub2",
+    "name": "小乐｜星源",
+    "type": 1,
+    "api": "https://xy.183933.xyz/php/ls.php/vod",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "ok",
+      "why": "keys=['class']",
+      "at": "2026-11-18T09:26:26Z"
+    }
+  },
+  {
+    "key": "pub3",
+    "name": "❤红牛资源",
+    "type": 1,
+    "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "ok",
+      "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
+      "at": "2026-11-18T09:26:26Z"
+    }
+  },
+  {
+    "key": "pub4",
+    "name": "❤无尽资源",
+    "type": 1,
+    "api": "https://api.wujinapi.me/api.php/provide/vod/?ac=list",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "ok",
+      "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
+      "at": "2026-11-18T09:26:26Z"
+    }
+  },
+  {
+    "key": "pub6",
+    "name": "❤淘片资源",
+    "type": 1,
+    "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "ok",
+      "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']",
+      "at": "2026-11-18T09:26:26Z"
+    }
+  },
+  {
     "key": "demo-json",
     "name": "示例 JSON 接口（请替换）",
     "type": 1,
@@ -10,7 +75,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-18T01:30:06Z"
+      "at": "2026-11-18T09:26:26Z"
     }
   },
   {
@@ -24,7 +89,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-18T01:30:06Z"
+      "at": "2026-11-18T09:26:26Z"
     }
   }
 ]
