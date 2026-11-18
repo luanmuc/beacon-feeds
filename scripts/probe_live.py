@@ -68,31 +68,33 @@ def parse_m3u(text):
     return channels
 
 def probe(url, timeout=TIMEOUT):
-    """判定一条直播流是否可拉：HEAD 优先，失败退化为 Range GET，读取首包。"""
+    """判定一条直播流是否可拉：HEAD 优先，失败退化为 Range GET，读取首包；返回 (ok, msg, 毫秒)。"""
     if url.startswith("rtmp") or url.startswith("rtsp"):
         # 非 HTTP 协议无法用 urllib 判定，交给 App 端；这里视为"未知可用"
-        return True, "protocol-not-http"
+        return True, "protocol-not-http", 0
     try:
+        start = time.monotonic()
         req = urllib.request.Request(url, headers={"User-Agent": UA}, method="HEAD")
         with urllib.request.urlopen(req, timeout=timeout) as r:
             code = r.status
             ctype = r.headers.get("Content-Type", "")
             if code < 400:
-                return True, f"HEAD {code} {ctype[:24]}"
+                return True, f"HEAD {code} {ctype[:24]}", int((time.monotonic() - start) * 1000)
     except urllib.error.HTTPError as e:
         if e.code == 405:  # 不允许 HEAD，退化为 GET
             pass
         else:
-            return False, f"HEAD {e.code}"
+            return False, f"HEAD {e.code}", -1
     except Exception as e:
         pass
     try:
+        start = time.monotonic()
         req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": "bytes=0-1024"})
         with urllib.request.urlopen(req, timeout=timeout) as r:
             r.read(1024)
-            return True, f"GET {r.status}"
+            return True, f"GET {r.status}", int((time.monotonic() - start) * 1000)
     except Exception as e:
-        return False, f"GET {type(e).__name__}"
+        return False, f"GET {type(e).__name__}", -1
 
 def load_candidates(path):
     items = []
@@ -175,12 +177,13 @@ def main():
             futs = {ex.submit(probe, u, args.timeout): (n, u) for n, u in jobs}
             for f in as_completed(futs):
                 n, u = futs[f]
-                ok, msg = f.result()
-                status[u] = {"ok": ok, "msg": msg}
+                ok, msg, ms = f.result()
+                status[u] = {"ok": ok, "msg": msg, "ms": ms}
         alive = []
         for c in merged:
             keep = [item for item in c["urls"] if status.get(item["url"], {}).get("ok")]
             if keep:
+                keep.sort(key=lambda x: status.get(x["url"], {}).get("ms", 999999))
                 c["urls"] = keep
                 alive.append(c)
         dead = [u for u, s in status.items() if not s["ok"]]
@@ -194,6 +197,7 @@ def main():
         "channels": len(merged),
         "lines": sum(len(c["urls"]) for c in merged),
         "dead": [{"url": u, "reason": status[u]["msg"]} for u in status if not status[u]["ok"]],
+        "fastest": min((s["ms"] for s in status.values() if s.get("ok") and s.get("ms", -1) >= 0), default=-1),
     }, open(args.report, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print(f"写出 {args.out} 与 {args.report}")
 
