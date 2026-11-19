@@ -51,8 +51,6 @@ http://video10.qtv.com.cn/drm/qtv5at/manifest.m3u8
 http://stream2.jlntv.cn/sptv/sd/live.m3u8?_upt=f27750421743154598
 #EXTINF:-1 tvg-name="TV BRICS Chinese (1080p)" group-title="General" tvg-logo="https://i.imgur.com/896132Z.png" tvg-id="TVBRICSChinese.cn@SD",TV BRICS Chinese (1080p)
 https://chibrics.mediacdn.ru/cdn/brics/chinese/playlist.m3u8
-#EXTINF:-1 tvg-name="Yichang Sanxia General Channel" group-title="General" tvg-logo="https://www.tvchinese.net/uploads/tv/ycsxggpd.jpg" tvg-id="YichangSanxiaGeneralChannel.cn@SD",Yichang Sanxia General Channel
-https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8
 #EXTINF:-1 tvg-name="Guangxi Variety & Travel Channel" group-title="General;Travel" tvg-logo="https://www.tvchinese.net/uploads/tv/gxzypd.jpg" tvg-id="GuangxiVarietyTravelChannel.cn@SD",Guangxi Variety & Travel Channel
 http://111.59.24.227:8181/tsfile/live/1001_1.m3u8?authid=0&key=txiptv&playlive=1
 #EXTINF:-1 tvg-name="CCTV-14 HD (1080p)" group-title="Kids" tvg-logo="https://i.imgur.com/c5SXW7i.png" tvg-id="CCTV14.cn@HD",CCTV-14 HD (1080p)
@@ -65,6 +63,8 @@ http://74.91.26.218:82/live/cctv12hd.m3u8
 http://38.75.136.137:98/gslb/dsdqpub/wsjk.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV-Women's Fashion SD (1080p)" group-title="Lifestyle" tvg-logo="https://i.imgur.com/FVbP0aP.png" tvg-id="CCTVWomensFashion.cn@SD",CCTV-Women's Fashion SD (1080p)
 http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub
+#EXTINF:-1 tvg-name="QTV-2" group-title="Lifestyle" tvg-logo="https://www.tvchinese.net/uploads/tv/qdtv2.jpg" tvg-id="QTV2.cn@SD",QTV-2
+http://video10.qtv.com.cn/drm/qtv2at/manifest.m3u8
 #EXTINF:-1 tvg-name="CCTV-6 HD (1080p)" group-title="Movies" tvg-logo="https://i.imgur.com/rFiaef7.png" tvg-id="CCTV6.cn@HD",CCTV-6 HD (1080p)
 http://69.30.245.50/live/cctv6.m3u8
 #EXTINF:-1 tvg-name="CCTV-Storm Theater (1080p)" group-title="Movies" tvg-logo="https://i.imgur.com/rEttkKm.png" tvg-id="CCTVStormTheater.cn@HD",CCTV-Storm Theater (1080p)
@@ -117,8 +117,6 @@ http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub
 http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub
 #EXTINF:-1 tvg-name="CCTV-Storm Football (1080p)" group-title="Sports" tvg-logo="https://i.imgur.com/Fy6HkX0.png" tvg-id="CCTVStormFootball.cn@HD",CCTV-Storm Football (1080p)
 http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="Yichang Sanxia Travel & Life Channel" group-title="Travel" tvg-logo="https://www.tvchinese.net/uploads/tv/ycsxlysh.jpg" tvg-id="YichangSanxiaTravelLifeChannel.cn@SD",Yichang Sanxia Travel & Life Channel
-https://liveplay.ycrmt.cn/sxgd/lysh.m3u8
 #EXTINF:-1 tvg-name="Anhui TV (1080p)" group-title="Undefined" tvg-logo="https://i.imgur.com/gDn101f.png" tvg-id="AnhuiTV.cn@SD",Anhui TV (1080p)
 https://restream.pdtvhd.com/memfs/c1cd2ed0-3b2b-4c25-af98-a7fb0b1eb130.m3u8
 #EXTINF:-1 tvg-name="Bread TV (720p)" group-title="Undefined" tvg-logo="https://bread-tv.com/uploads/allimg/241202/9_1836542371.png" tvg-id="BreadTV.cn@SD",Bread TV (720p)
@@ -133,8 +131,6 @@ https://h5cul1yar48um3t.wcetv.com/hls/gdsatellite.m3u8
 http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8
 #EXTINF:-1 tvg-name="Qianjiang Channel" group-title="Undefined" tvg-logo="https://i.imgur.com/QWfoGbM.png" tvg-id="QianjiangChannel.cn@SD",Qianjiang Channel
 rtmp://splay-qukan.cztv.com/live/1792059352668052?auth_key=1886667371-a351173879224e5fbbb4412bf9f96eff-0-de13c2186941a507a27a3438213d2169
-#EXTINF:-1 tvg-name="RTHK TV 31 (1080p) [Geo-blocked]" group-title="Undefined" tvg-logo="https://i.imgur.com/kf818kM.png" tvg-id="RTHKTV31.hk@SD",RTHK TV 31 (1080p) [Geo-blocked]
-https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8
 #EXTINF:-1 tvg-name="ViuTV (1080i)" group-title="Undefined" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/ViuTV_logo.svg/960px-ViuTV_logo.svg.png" tvg-id="ViuTV.hk@SD",ViuTV (1080i)
 http://php.jdshipin.com/TVOD/iptv.php?id=viutv
 #EXTINF:-1 tvg-name="VoA TV China (1080p)" group-title="Undefined" tvg-logo="https://i.imgur.com/XCTZkoq.png" tvg-id="VoATVChina.cn@SD",VoA TV China (1080p)
