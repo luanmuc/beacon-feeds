@@ -9,7 +9,7 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class']",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
     }
   },
   {
@@ -22,7 +22,7 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class']",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
     }
   },
   {
@@ -35,7 +35,7 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
     }
   },
   {
@@ -48,7 +48,20 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
+    }
+  },
+  {
+    "key": "pub5",
+    "name": "❤光速资源",
+    "type": 1,
+    "api": "https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "ok",
+      "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
+      "at": "2026-11-19T00:58:03Z"
     }
   },
   {
@@ -61,7 +74,7 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
     }
   },
   {
@@ -75,7 +88,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
     }
   },
   {
@@ -89,7 +102,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-18T09:26:26Z"
+      "at": "2026-11-19T00:58:03Z"
     }
   }
 ]
