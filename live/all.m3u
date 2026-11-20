@@ -45,6 +45,8 @@ https://event.pull.hebtv.com/live/live101.m3u8
 https://p8.vzan.com/slowlive/415983998730568937/live.m3u8
 #EXTINF:-1 tvg-name="Kangba TV" group-title="General" tvg-logo="https://www.tvchinese.net/uploads/tv/kangbatv.jpg" tvg-id="KangbaTV.cn@SD",Kangba TV
 http://110.185.237.164:8888/hls/30/index.m3u8
+#EXTINF:-1 tvg-name="QTV-5" group-title="General" tvg-logo="https://www.tvchinese.net/uploads/tv/qdtv5.jpg" tvg-id="QTV5.cn@SD",QTV-5
+http://video10.qtv.com.cn/drm/qtv5at/manifest.m3u8
 #EXTINF:-1 tvg-name="Siping TV" group-title="General" tvg-logo="https://www.tvchinese.net/uploads/tv/sptv1.jpg" tvg-id="SipingTV.cn@SD",Siping TV
 http://stream2.jlntv.cn/sptv/sd/live.m3u8?_upt=f27750421743154598
 #EXTINF:-1 tvg-name="TV BRICS Chinese (1080p)" group-title="General" tvg-logo="https://i.imgur.com/896132Z.png" tvg-id="TVBRICSChinese.cn@SD",TV BRICS Chinese (1080p)
@@ -143,8 +145,6 @@ https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlist.m3u8
 http://110.153.180.106:55555/out_3/index.m3u8
 #EXTINF:-1 tvg-name="Xinjiang TV 3" group-title="Undefined" tvg-logo="https://i.imgur.com/l8S5qQB.png" tvg-id="XinjiangTV3.cn@SD",Xinjiang TV 3
 http://110.153.180.106:55555/out_2/index.m3u8
-#EXTINF:-1 tvg-name="Xinjiang TV 8" group-title="Undefined" tvg-logo="https://i.imgur.com/JJw1Ndc.png" tvg-id="XinjiangTV8.cn@SD",Xinjiang TV 8
-http://120.70.60.179:9901/tsfile/live/1002_1.m3u8?authid=0&key=txiptv&playlive=1
 #EXTINF:-1 tvg-name="Xizang TV Tibetan" group-title="Undefined" tvg-logo="https://i.imgur.com/NtvfnVV.png" tvg-id="XizangTVTibetan.cn@SD",Xizang TV Tibetan
 https://live.vtibet.cn/live/ZYWS20261016.stream.m3u8
 #EXTINF:-1 tvg-name="Zhejiang International Channel" group-title="Undefined" tvg-logo="https://i.imgur.com/XOL1Hph.png" tvg-id="ZhejiangInternationalChannel.cn@SD",Zhejiang International Channel
