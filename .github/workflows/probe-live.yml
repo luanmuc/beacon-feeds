@@ -33,7 +33,7 @@ jobs:
         run: python3 scripts/probe_live.py --input live/sources.txt --out live/all.m3u --report live/report.json
       - name: Build tvbox.json
         env:
-          RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/stable
+          RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/release
         run: python3 scripts/build_config.py
       - name: Build manifest and live report
         run: |
@@ -54,7 +54,7 @@ jobs:
           else
             echo "no change"
           fi
-          git push -f origin HEAD:refs/heads/stable
+          git push -f origin HEAD:refs/heads/release
 
       - name: Build health page
         run: python3 scripts/build_health.py

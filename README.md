@@ -43,10 +43,10 @@ RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/stable python3 scripts
 工作流每次探测成功后会提交生成物并强制移动 `stable` 标签，App 固定读取：
 
 ```text
-https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/tvbox.json
-https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live/all.m3u
-https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/manifest.json
-https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live-report.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/tvbox.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live/all.m3u
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/manifest.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live-report.json
 ```
 
 ## 设计规则
