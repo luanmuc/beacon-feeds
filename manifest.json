@@ -1,6 +1,6 @@
 {
   "version": "2026.11.21",
-  "updated_at": "2026-11-21T12:39:46Z",
+  "updated_at": "2026-11-21T13:48:33Z",
   "vod_sites": 5,
   "vod_ok": 5,
   "vod_skip": 0,
@@ -43,7 +43,7 @@
       "ms": 603
     }
   ],
-  "live_channels": 63,
-  "live_lines": 63,
-  "fastest": 89
+  "live_channels": 64,
+  "live_lines": 64,
+  "fastest": 228
 }
