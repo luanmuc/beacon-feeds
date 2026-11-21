@@ -9,7 +9,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class']",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 2386
     }
   },
   {
@@ -22,7 +23,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class']",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 262
     }
   },
   {
@@ -35,7 +37,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 130
     }
   },
   {
@@ -48,7 +51,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 65
     }
   },
   {
@@ -61,7 +65,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 88
     }
   },
   {
@@ -74,7 +79,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 248
     }
   },
   {
@@ -88,7 +94,8 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 0
     }
   },
   {
@@ -102,7 +109,8 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-20T01:03:59Z"
+      "at": "2026-11-21T00:17:02Z",
+      "ms": 0
     }
   }
 ]
