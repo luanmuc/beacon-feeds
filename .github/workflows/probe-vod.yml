@@ -39,12 +39,11 @@ jobs:
         env:
           RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/release
         run: python3 scripts/build_config.py
-      - name: Build manifest and live report
+      - name: Build manifest
         run: |
           set -e
-          python3 scripts/build_manifest.py --tvbox tvbox.json --report live/report.json --alive config/sites.alive.json --dead config/sites.dead.json --out manifest.json
+          python3 scripts/build_manifest.py --tvbox tvbox.json --report live-report.json --alive config/sites.alive.json --dead config/sites.dead.json --out manifest.json
           if [ -f live/all.m3u ]; then cp live/all.m3u live.m3u; fi
-          if [ -f live/report.json ]; then cp live/report.json live-report.json; fi
       - name: Commit and move release branch
         run: |
           set -e
