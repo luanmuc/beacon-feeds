@@ -8,23 +8,9 @@
     "quickSearch": 1,
     "probe": {
       "state": "ok",
-      "why": "keys=['class']",
-      "at": "2026-11-21T00:38:48Z",
-      "ms": 1161
-    }
-  },
-  {
-    "key": "pub2",
-    "name": "小乐｜星源",
-    "type": 1,
-    "api": "https://xy.183933.xyz/php/ls.php/vod",
-    "searchable": 1,
-    "quickSearch": 1,
-    "probe": {
-      "state": "ok",
-      "why": "keys=['class']",
-      "at": "2026-11-21T00:38:48Z",
-      "ms": 708
+      "why": "class-only(1); category=list=42",
+      "at": "2026-11-21T11:02:28Z",
+      "ms": 29995
     }
   },
   {
@@ -36,9 +22,9 @@
     "quickSearch": 1,
     "probe": {
       "state": "ok",
-      "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-21T00:38:48Z",
-      "ms": 298
+      "why": "list=20",
+      "at": "2026-11-21T11:02:28Z",
+      "ms": 1018
     }
   },
   {
@@ -50,9 +36,9 @@
     "quickSearch": 1,
     "probe": {
       "state": "ok",
-      "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-21T00:38:48Z",
-      "ms": 179
+      "why": "list=20",
+      "at": "2026-11-21T11:02:28Z",
+      "ms": 5572
     }
   },
   {
@@ -64,9 +50,9 @@
     "quickSearch": 1,
     "probe": {
       "state": "ok",
-      "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-21T00:38:48Z",
-      "ms": 656
+      "why": "list=20",
+      "at": "2026-11-21T11:02:28Z",
+      "ms": 1145
     }
   },
   {
@@ -78,9 +64,9 @@
     "quickSearch": 1,
     "probe": {
       "state": "ok",
-      "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']",
-      "at": "2026-11-21T00:38:48Z",
-      "ms": 643
+      "why": "list=30",
+      "at": "2026-11-21T11:02:28Z",
+      "ms": 6487
     }
   },
   {
@@ -94,7 +80,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-21T00:38:48Z",
+      "at": "2026-11-21T11:02:28Z",
       "ms": 0
     }
   },
@@ -109,7 +95,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-21T00:38:48Z",
+      "at": "2026-11-21T11:02:28Z",
       "ms": 0
     }
   }

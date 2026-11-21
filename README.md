@@ -43,6 +43,8 @@ RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/main python3 scripts/b
 2. **同名频道自动合并多线路**（最多 3 条）：配合 App 的"失败自动换线"（`LiveSetting.isChange`）。
 3. **只提交变化**：workflow 里 `git diff --cached --quiet` 判断，无变化不产生提交。
 4. **产物必过校验**：`build_config.py` 校验 sites 的 `key/name/api` 与 lives 的 `name`，失败直接让 CI 变红。
+5. **影视存活不是“能解析 JSON”**：首页/第一个分类必须能出非空 list；只有 `class` 分类壳的站点判失效。
+6. **直播存活不是“HEAD 200”**：必须能取到 M3U8 片单/首片或 FLV 头；401/403/404/HTML 和 RTMP 未探测都不算存活。
 
 ## 私密性
 

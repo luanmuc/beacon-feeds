@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "key": "pub2",
+    "name": "小乐｜星源",
+    "type": 1,
+    "api": "https://xy.183933.xyz/php/ls.php/vod",
+    "searchable": 1,
+    "quickSearch": 1,
+    "probe": {
+      "state": "dead",
+      "why": "class-only(5); category=no-list; keys=['limit', 'list', 'page', 'pagecount', 'total']",
+      "at": "2026-11-21T11:02:28Z",
+      "ms": 6182
+    }
+  }
+]

@@ -7,7 +7,7 @@
 候选文件 sources.txt 每行：
     <名字>\t<m3u地址>   或直接写 <m3u地址>；# 开头为注释。
 """
-import argparse, json, os, re, sys, time, urllib.request, urllib.error
+import argparse, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 UA = "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"
@@ -67,32 +67,85 @@ def parse_m3u(text):
             pending, attrs_local = None, {}
     return channels
 
-def probe(url, timeout=TIMEOUT):
-    """判定一条直播流是否可拉：HEAD 优先，失败退化为 Range GET，读取首包；返回 (ok, msg, 毫秒)。"""
-    if url.startswith("rtmp") or url.startswith("rtsp"):
-        # 非 HTTP 协议无法用 urllib 判定，交给 App 端；这里视为"未知可用"
-        return True, "protocol-not-http", 0
+def request_prefix(url, timeout=TIMEOUT, headers=None):
+    """GET 前 2KB；返回 (状态码, Content-Type, 字节前缀, 最终 URL)。"""
+    h = {"User-Agent": UA, "Range": "bytes=0-2047"}
+    if headers:
+        h.update(headers)
+    req = urllib.request.Request(url, headers=h)
     try:
-        start = time.monotonic()
-        req = urllib.request.Request(url, headers={"User-Agent": UA}, method="HEAD")
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            code = r.status
-            ctype = r.headers.get("Content-Type", "")
-            if code < 400:
-                return True, f"HEAD {code} {ctype[:24]}", int((time.monotonic() - start) * 1000)
+            return r.status, r.headers.get_content_type(), r.read(2048), r.geturl()
     except urllib.error.HTTPError as e:
-        if e.code == 405:  # 不允许 HEAD，退化为 GET
-            pass
-        else:
-            return False, f"HEAD {e.code}", -1
+        return e.code, e.headers.get_content_type() if e.headers else "", e.read(2048), url
     except Exception as e:
-        pass
+        return None, type(e).__name__, b"", url
+
+
+def first_uris(base, text, limit=2):
+    uris = []
+    for line in text.splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            uris.append(urllib.parse.urljoin(base, line))
+            if len(uris) >= limit:
+                break
+    return uris
+
+
+def valid_body(status, ctype, body):
+    if status is None or status >= 400:
+        return False
+    if not body:
+        return False
+    head = body.lstrip().lower()
+    if head.startswith(b"<html") or head.startswith(b"<!doctype html"):
+        return False
+    if ctype.startswith(("text/html", "application/json")):
+        return False
+    return True
+
+
+def probe(url, timeout=TIMEOUT, header=None):
+    """判定直播流是否真的能出片单/首片；HTTP 200 不再直接算活。"""
+    if url.startswith("rtmp") or url.startswith("rtsp"):
+        # 非 HTTP 协议当前环境无法判定；不能再默认为可用。
+        return None, "protocol-not-http", -1
+    headers = None
+    if header:
+        headers = {}
+        for item in header.split("&"):
+            if "=" in item:
+                k, v = item.split("=", 1)
+                if k and v:
+                    headers[k] = v
+    start = time.monotonic()
     try:
-        start = time.monotonic()
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": "bytes=0-1024"})
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            r.read(1024)
-            return True, f"GET {r.status}", int((time.monotonic() - start) * 1000)
+        status, ctype, body, final_url = request_prefix(url, timeout, headers)
+        if status is None:
+            return False, f"GET {ctype}", -1
+        if status >= 400:
+            return False, f"GET {status}", -1
+        if body.lstrip().startswith(b"#EXTM3U"):
+            text = body.decode("utf-8", "ignore")
+            if "#EXT-X-STREAM-INF" in text:
+                for variant in first_uris(final_url, text, 2):
+                    v_status, v_ctype, v_body, v_url = request_prefix(variant, timeout, headers)
+                    if not valid_body(v_status, v_ctype, v_body) or not v_body.lstrip().startswith(b"#EXTM3U"):
+                        continue
+                    for segment in first_uris(v_url, v_body.decode("utf-8", "ignore"), 2):
+                        s_status, s_ctype, s_body, _ = request_prefix(segment, timeout, headers)
+                        if valid_body(s_status, s_ctype, s_body):
+                            return True, f"HLS {s_status} {s_ctype[:20]}", int((time.monotonic() - start) * 1000)
+                return False, "HLS-no-playable-segment", -1
+            for segment in first_uris(final_url, text, 2):
+                s_status, s_ctype, s_body, _ = request_prefix(segment, timeout, headers)
+                if valid_body(s_status, s_ctype, s_body):
+                    return True, f"HLS {s_status} {s_ctype[:20]}", int((time.monotonic() - start) * 1000)
+            return False, "HLS-no-playable-segment", -1
+        if body[:3] == b"FLV" or ctype.startswith("video/"):
+            return True, f"GET {status} {ctype[:20]}", int((time.monotonic() - start) * 1000)
+        return False, f"not-stream {status} {ctype[:20]}", -1
     except Exception as e:
         return False, f"GET {type(e).__name__}", -1
 
@@ -171,22 +224,22 @@ def main():
 
     status = {}
     if not args.parse_only:
-        jobs = [(c["name"], item["url"]) for c in merged for item in c["urls"]]
+        jobs = [(c["name"], item["url"], item.get("header")) for c in merged for item in c["urls"]]
         print(f"  探测 {len(jobs)} 条线路…")
         with ThreadPoolExecutor(max_workers=args.workers) as ex:
-            futs = {ex.submit(probe, u, args.timeout): (n, u) for n, u in jobs}
+            futs = {ex.submit(probe, u, args.timeout, h): (n, u) for n, u, h in jobs}
             for f in as_completed(futs):
                 n, u = futs[f]
                 ok, msg, ms = f.result()
                 status[u] = {"ok": ok, "msg": msg, "ms": ms}
         alive = []
         for c in merged:
-            keep = [item for item in c["urls"] if status.get(item["url"], {}).get("ok")]
+            keep = [item for item in c["urls"] if status.get(item["url"], {}).get("ok") is True]
             if keep:
                 keep.sort(key=lambda x: status.get(x["url"], {}).get("ms", 999999))
                 c["urls"] = keep
                 alive.append(c)
-        dead = [u for u, s in status.items() if not s["ok"]]
+        dead = [u for u, s in status.items() if s["ok"] is not True]
         print(f"[4/4] 存活频道 {len(alive)} 条，失效线路 {len(dead)} 条")
         merged = alive
 

@@ -15,24 +15,10 @@
       "key": "pub1",
       "name": "A站｜星源",
       "probe": {
-        "at": "2026-11-21T00:38:48Z",
-        "ms": 1161,
+        "at": "2026-11-21T11:02:28Z",
+        "ms": 29995,
         "state": "ok",
-        "why": "keys=['class']"
-      },
-      "quickSearch": 1,
-      "searchable": 1,
-      "type": 1
-    },
-    {
-      "api": "https://xy.183933.xyz/php/ls.php/vod",
-      "key": "pub2",
-      "name": "小乐｜星源",
-      "probe": {
-        "at": "2026-11-21T00:38:48Z",
-        "ms": 708,
-        "state": "ok",
-        "why": "keys=['class']"
+        "why": "class-only(1); category=list=42"
       },
       "quickSearch": 1,
       "searchable": 1,
@@ -43,10 +29,10 @@
       "key": "pub3",
       "name": "❤红牛资源",
       "probe": {
-        "at": "2026-11-21T00:38:48Z",
-        "ms": 298,
+        "at": "2026-11-21T11:02:28Z",
+        "ms": 1018,
         "state": "ok",
-        "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']"
+        "why": "list=20"
       },
       "quickSearch": 1,
       "searchable": 1,
@@ -57,10 +43,10 @@
       "key": "pub4",
       "name": "❤无尽资源",
       "probe": {
-        "at": "2026-11-21T00:38:48Z",
-        "ms": 179,
+        "at": "2026-11-21T11:02:28Z",
+        "ms": 5572,
         "state": "ok",
-        "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']"
+        "why": "list=20"
       },
       "quickSearch": 1,
       "searchable": 1,
@@ -71,10 +57,10 @@
       "key": "pub5",
       "name": "❤光速资源",
       "probe": {
-        "at": "2026-11-21T00:38:48Z",
-        "ms": 656,
+        "at": "2026-11-21T11:02:28Z",
+        "ms": 1145,
         "state": "ok",
-        "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']"
+        "why": "list=20"
       },
       "quickSearch": 1,
       "searchable": 1,
@@ -85,10 +71,10 @@
       "key": "pub6",
       "name": "❤淘片资源",
       "probe": {
-        "at": "2026-11-21T00:38:48Z",
-        "ms": 643,
+        "at": "2026-11-21T11:02:28Z",
+        "ms": 6487,
         "state": "ok",
-        "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']"
+        "why": "list=30"
       },
       "quickSearch": 1,
       "searchable": 1,
