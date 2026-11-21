@@ -232,7 +232,9 @@ export default class BeaconVod extends Spider {
     playerContent(flag, id, vipFlags) {
         const raw = text(id);
         if (/^https?:\/\//i.test(raw) || raw.startsWith("magnet:") || raw.startsWith("rtmp")) {
-            return { parse: 0, jx: 0, url: raw, flag: text(flag) };
+            // 上游返回的网页播放页交给 WebView 嗅探；直链媒体直接播。
+            const media = /\.(m3u8|mpd|mp4|mkv|flv|mp3|m4a|aac)(\?|#|$)/i.test(raw);
+            return { parse: media ? 0 : 1, jx: 0, url: raw, flag: text(flag) };
         }
         if (raw.startsWith("beacon://")) {
             try {
