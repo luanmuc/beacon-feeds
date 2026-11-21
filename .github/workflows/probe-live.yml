@@ -39,13 +39,14 @@ jobs:
         run: |
           set -e
           python3 scripts/build_manifest.py --tvbox tvbox.json --report live/report.json --alive config/sites.alive.json --dead config/sites.dead.json --out manifest.json
+          if [ -f live/all.m3u ]; then cp live/all.m3u live.m3u; fi
           cp live/report.json live-report.json
       - name: Commit and move stable tag
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add live tvbox.json manifest.json live-report.json
+          git add live tvbox.json live.m3u manifest.json live-report.json
           if ! git diff --cached --quiet; then
             git commit -m "chore(live): probe $(date -u +%F_%H:%M)"
             git pull --rebase --autostash origin "${GITHUB_REF_NAME}"

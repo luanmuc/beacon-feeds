@@ -13,6 +13,7 @@ config/
   sites.json                # 影视接口候选（手改/追加）；disabled=true 的不会进产物
   sites.alive.json          # 探测后存活（自动生成）
   sites.dead.json           # 探测后失效（自动生成，人工复核用）
+live.m3u                    # 合并后的直播清单（根文件，App 固定读取）
 live/
   sources.txt               # 候选 m3u 清单（手改）
   all.m3u                   # 探测+合并后的产物（自动生成）
