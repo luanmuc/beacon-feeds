@@ -1,49 +1,49 @@
 {
   "version": "2026.11.21",
-  "updated_at": "2026-11-21T12:24:44Z",
+  "updated_at": "2026-11-21T12:27:29Z",
   "vod_sites": 5,
   "vod_ok": 5,
   "vod_skip": 0,
   "vod_dead": 0,
-  "vod_avg_ms": 705,
+  "vod_avg_ms": 786,
   "vod_health": [
     {
       "key": "pub1",
       "name": "A站｜星源",
       "state": "ok",
       "score": 100,
-      "ms": 2282
+      "ms": 2733
     },
     {
       "key": "pub3",
       "name": "❤红牛资源",
       "state": "ok",
       "score": 100,
-      "ms": 249
+      "ms": 250
     },
     {
       "key": "pub4",
       "name": "❤无尽资源",
       "state": "ok",
       "score": 100,
-      "ms": 185
+      "ms": 89
     },
     {
       "key": "pub5",
       "name": "❤光速资源",
       "state": "ok",
       "score": 100,
-      "ms": 191
+      "ms": 198
     },
     {
       "key": "pub6",
       "name": "❤淘片资源",
       "state": "ok",
       "score": 100,
-      "ms": 618
+      "ms": 664
     }
   ],
-  "live_channels": 63,
-  "live_lines": 63,
-  "fastest": 89
+  "live_channels": 0,
+  "live_lines": 0,
+  "fastest": null
 }
