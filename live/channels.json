@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T12:06:40Z",
+  "generated_at": "2026-11-21T12:24:44Z",
   "channels": [
     {
       "name": "CCTV-2 (720p)",
@@ -310,20 +310,6 @@
       ]
     },
     {
-      "name": "Yichang Sanxia General Channel",
-      "group": "General",
-      "logo": "https://www.tvchinese.net/uploads/tv/ycsxggpd.jpg",
-      "tvg_id": "YichangSanxiaGeneralChannel.cn@SD",
-      "chno": "",
-      "catchup": "",
-      "urls": [
-        {
-          "url": "https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8",
-          "header": ""
-        }
-      ]
-    },
-    {
       "name": "Guangxi Variety & Travel Channel",
       "group": "General;Travel",
       "logo": "https://www.tvchinese.net/uploads/tv/gxzypd.jpg",
@@ -506,20 +492,6 @@
       ]
     },
     {
-      "name": "CCTV+ 1 (600p) [Not 24/7]",
-      "group": "News",
-      "logo": "https://i.imgur.com/U8d4Is6.png",
-      "tvg_id": "CCTVPlus1.cn@SD",
-      "chno": "",
-      "catchup": "",
-      "urls": [
-        {
-          "url": "https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8",
-          "header": ""
-        }
-      ]
-    },
-    {
       "name": "CCTV+ 2 (600p) [Not 24/7]",
       "group": "News",
       "logo": "https://i.imgur.com/qSg862A.png",
@@ -697,20 +669,6 @@
       "urls": [
         {
           "url": "http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub",
-          "header": ""
-        }
-      ]
-    },
-    {
-      "name": "Yichang Sanxia Travel & Life Channel",
-      "group": "Travel",
-      "logo": "https://www.tvchinese.net/uploads/tv/ycsxlysh.jpg",
-      "tvg_id": "YichangSanxiaTravelLifeChannel.cn@SD",
-      "chno": "",
-      "catchup": "",
-      "urls": [
-        {
-          "url": "https://liveplay.ycrmt.cn/sxgd/lysh.m3u8",
           "header": ""
         }
       ]
