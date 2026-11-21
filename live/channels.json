@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-11-21T12:03:25Z",
+  "generated_at": "2026-11-21T12:06:40Z",
   "channels": [
+    {
+      "name": "CCTV-2 (720p)",
+      "group": "Business",
+      "logo": "https://i.imgur.com/ILamhwU.png",
+      "tvg_id": "CCTV2.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv2hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Nostalgia Theater (1080p)",
+      "group": "Classic",
+      "logo": "https://i.imgur.com/TVs9PBc.png",
+      "tvg_id": "CCTVNostalgiaTheater.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/hjjc.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-8 (720p)",
+      "group": "Culture",
+      "logo": "https://i.imgur.com/GyHaZ8X.png",
+      "tvg_id": "CCTV8.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv8hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
     {
       "name": "Lanzhou Culture & Tourism Channel",
       "group": "Culture",
@@ -16,15 +58,99 @@
       ]
     },
     {
-      "name": "Jiangsu Variety Channel (576p) [Not 24/7]",
-      "group": "Entertainment",
-      "logo": "https://www.tvchinese.net/uploads/tv/jszy.jpg",
-      "tvg_id": "JiangsuVarietyChannel.cn@SD",
+      "name": "CCTV-9 (576i)",
+      "group": "Documentary",
+      "logo": "https://i.imgur.com/3tivvMm.png",
+      "tvg_id": "CCTV9.cn@SD",
       "chno": "",
       "catchup": "",
       "urls": [
         {
-          "url": "http://183.207.248.71/gitv/live1/G_JSZY/G_JSZY",
+          "url": "https://xykt-fix.github.io/Y77.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Weapon & Technology (1080p)",
+      "group": "Documentary",
+      "logo": "https://i.imgur.com/QlF96eS.png",
+      "tvg_id": "CCTVWeaponTechnology.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/gfjs.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-10 (720p)",
+      "group": "Education",
+      "logo": "https://i.imgur.com/sSSO7UD.png",
+      "tvg_id": "CCTV10.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv10hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-7 (720p)",
+      "group": "Education",
+      "logo": "https://i.imgur.com/CKcPMQC.png",
+      "tvg_id": "CCTV7.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv7hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-World Geography SD (1080p)",
+      "group": "Education",
+      "logo": "https://i.imgur.com/V2ncOXi.png",
+      "tvg_id": "CCTVWorldGeography.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/sjdl.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-17 HD (1080p)",
+      "group": "Education;Outdoor",
+      "logo": "https://i.imgur.com/jSQURxS.png",
+      "tvg_id": "CCTV17.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv17hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-3 (720p)",
+      "group": "Entertainment",
+      "logo": "https://i.imgur.com/iFlkIuw.png",
+      "tvg_id": "CCTV3.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv3hd.m3u8",
           "header": ""
         }
       ]
@@ -58,15 +184,43 @@
       ]
     },
     {
-      "name": "Guizhou TV (576p)",
+      "name": "CCTV-1 (720p)",
       "group": "General",
-      "logo": "https://i.imgur.com/nkcKCdr.png",
-      "tvg_id": "GuizhouTV.cn@SD",
+      "logo": "https://i.imgur.com/TpA3cUl.png",
+      "tvg_id": "CCTV1.cn@SD",
       "chno": "",
       "catchup": "",
       "urls": [
         {
-          "url": "http://183.207.248.71/gitv/live1/G_GUIZHOU/G_GUIZHOU",
+          "url": "http://74.91.26.218:82/live/cctv1hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "Chaozhou Public Channel",
+      "group": "General",
+      "logo": "https://i.imgur.com/8YIrgB7.png",
+      "tvg_id": "ChaozhouPublicChannel.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://113.64.146.48:1688/hls/4/index.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "Guangzhou TV",
+      "group": "General",
+      "logo": "https://i.imgur.com/ff3KQXp.png",
+      "tvg_id": "GuangzhouTV.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "https://tencentplaybusiness.gztv.com/live/zonghes.m3u8",
           "header": ""
         }
       ]
@@ -100,29 +254,15 @@
       ]
     },
     {
-      "name": "Jiangsu City Channel (576p)",
+      "name": "Kangba TV",
       "group": "General",
-      "logo": "https://www.tvchinese.net/uploads/tv/jscs.jpg",
-      "tvg_id": "JiangsuCityChannel.cn@SD",
+      "logo": "https://www.tvchinese.net/uploads/tv/kangbatv.jpg",
+      "tvg_id": "KangbaTV.cn@SD",
       "chno": "",
       "catchup": "",
       "urls": [
         {
-          "url": "http://183.207.248.71/gitv/live1/G_JSCS/G_JSCS",
-          "header": ""
-        }
-      ]
-    },
-    {
-      "name": "Jiangsu Public & News Channel (576p)",
-      "group": "General",
-      "logo": "https://www.tvchinese.net/uploads/tv/jsgg.jpg",
-      "tvg_id": "JiangsuPublicNewsChannel.cn@SD",
-      "chno": "",
-      "catchup": "",
-      "urls": [
-        {
-          "url": "http://183.207.248.71/gitv/live1/G_JSGG/G_JSGG",
+          "url": "http://110.185.237.164:8888/hls/30/index.m3u8",
           "header": ""
         }
       ]
@@ -184,6 +324,76 @@
       ]
     },
     {
+      "name": "Guangxi Variety & Travel Channel",
+      "group": "General;Travel",
+      "logo": "https://www.tvchinese.net/uploads/tv/gxzypd.jpg",
+      "tvg_id": "GuangxiVarietyTravelChannel.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://111.59.24.227:8181/tsfile/live/1001_1.m3u8?authid=0&key=txiptv&playlive=1",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-14 HD (1080p)",
+      "group": "Kids",
+      "logo": "https://i.imgur.com/c5SXW7i.png",
+      "tvg_id": "CCTV14.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv14hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-12 (720p)",
+      "group": "Lifestyle",
+      "logo": "https://i.imgur.com/3yTuiOM.png",
+      "tvg_id": "CCTV12.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv12hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Health (1080p)",
+      "group": "Lifestyle",
+      "logo": "https://i.imgur.com/AzpRtCz.png",
+      "tvg_id": "CCTVHealth.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/wsjk.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Women's Fashion SD (1080p)",
+      "group": "Lifestyle",
+      "logo": "https://i.imgur.com/FVbP0aP.png",
+      "tvg_id": "CCTVWomensFashion.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/nxss.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
       "name": "QTV-2",
       "group": "Lifestyle",
       "logo": "https://www.tvchinese.net/uploads/tv/qdtv2.jpg",
@@ -193,6 +403,48 @@
       "urls": [
         {
           "url": "http://video10.qtv.com.cn/drm/qtv2at/manifest.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-6 HD (1080p)",
+      "group": "Movies",
+      "logo": "https://i.imgur.com/rFiaef7.png",
+      "tvg_id": "CCTV6.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://69.30.245.50/live/cctv6.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Storm Theater (1080p)",
+      "group": "Movies",
+      "logo": "https://i.imgur.com/rEttkKm.png",
+      "tvg_id": "CCTVStormTheater.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/fyjc.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-The First Theater (1080p)",
+      "group": "Movies",
+      "logo": "https://i.imgur.com/eFxD3hq.png",
+      "tvg_id": "CCTVTheFirstTheater.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/dyjc.m3u8?auth=testpub",
           "header": ""
         }
       ]
@@ -212,6 +464,62 @@
       ]
     },
     {
+      "name": "CCTV-11 (720p)",
+      "group": "Music",
+      "logo": "https://i.imgur.com/CjOWx7L.png",
+      "tvg_id": "CCTV11.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv11hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-15 (720p)",
+      "group": "Music",
+      "logo": "https://i.imgur.com/CCV0eRG.png",
+      "tvg_id": "CCTV15.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv15hd.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Storm Music (1080p)",
+      "group": "Music",
+      "logo": "https://i.imgur.com/IiiRmrf.png",
+      "tvg_id": "CCTVStormMusic.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV+ 1 (600p) [Not 24/7]",
+      "group": "News",
+      "logo": "https://i.imgur.com/U8d4Is6.png",
+      "tvg_id": "CCTVPlus1.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL1.smil/playlist.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
       "name": "CCTV+ 2 (600p) [Not 24/7]",
       "group": "News",
       "logo": "https://i.imgur.com/qSg862A.png",
@@ -221,6 +529,20 @@
       "urls": [
         {
           "url": "https://cd-live-stream.news.cctvplus.com/live/smil:CHANNEL2.smil/playlist.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-13 (720p)",
+      "group": "News",
+      "logo": "https://i.imgur.com/6MTar6J.png",
+      "tvg_id": "CCTV13.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://74.91.26.218:82/live/cctv13hd.m3u8",
           "header": ""
         }
       ]
@@ -338,29 +660,43 @@
       ]
     },
     {
-      "name": "Fengshang Shopping Channel (1080p)",
-      "group": "Shop",
-      "logo": "https://i.imgur.com/WNhfnUR.png",
-      "tvg_id": "FengshangShoppingChannel.cn@SD",
+      "name": "CCTV-Billiards (1080p)",
+      "group": "Sports",
+      "logo": "https://i.imgur.com/WK3keM9.png",
+      "tvg_id": "CCTVBilliards.cn@HD",
       "chno": "",
       "catchup": "",
       "urls": [
         {
-          "url": "http://183.207.248.71/cntv/live1/fengshanggw/fengshanggw",
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/ystq.m3u8?auth=testpub",
           "header": ""
         }
       ]
     },
     {
-      "name": "Jiangsu Sports & Leisure Channel (576p)",
+      "name": "CCTV-Golf & Tennis (1080p)",
       "group": "Sports",
-      "logo": "https://www.tvchinese.net/uploads/tv/jsty.jpg",
-      "tvg_id": "JiangsuSportsLeisureChannel.cn@SD",
+      "logo": "https://i.imgur.com/iqJJTmH.png",
+      "tvg_id": "CCTVGolfTennis.cn@HD",
       "chno": "",
       "catchup": "",
       "urls": [
         {
-          "url": "http://183.207.248.71/gitv/live1/G_JSTY/G_JSTY",
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/gefwq.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Storm Football (1080p)",
+      "group": "Sports",
+      "logo": "https://i.imgur.com/Fy6HkX0.png",
+      "tvg_id": "CCTVStormFootball.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub",
           "header": ""
         }
       ]
@@ -408,6 +744,48 @@
       ]
     },
     {
+      "name": "CCTV-8K HD (1080p)",
+      "group": "Undefined",
+      "logo": "https://i.imgur.com/fxVPMJF.png",
+      "tvg_id": "CCTV8K.cn@HD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://192.151.150.154/live/cctv8k.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "CCTV-Culture of Quality SD (1080p)",
+      "group": "Undefined",
+      "logo": "https://i.imgur.com/Paig8gG.png",
+      "tvg_id": "CCTVCultureofQuality.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://38.75.136.137:98/gslb/dsdqpub/ysjp.m3u8?auth=testpub",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "Guangdong Satellite TV",
+      "group": "Undefined",
+      "logo": "https://parco-zh.github.io/demo/guangdong.jpg",
+      "tvg_id": "GuangdongSatelliteTV.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "https://h5cul1yar48um3t.wcetv.com/hls/gdsatellite.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
       "name": "Hunan TV (2160p)",
       "group": "Undefined",
       "logo": "https://parco-zh.github.io/demo/HNWS.png",
@@ -436,6 +814,20 @@
       ]
     },
     {
+      "name": "ViuTV (1080i)",
+      "group": "Undefined",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/ViuTV_logo.svg/960px-ViuTV_logo.svg.png",
+      "tvg_id": "ViuTV.hk@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://php.jdshipin.com/TVOD/iptv.php?id=viutv",
+          "header": ""
+        }
+      ]
+    },
+    {
       "name": "VoA TV China (1080p)",
       "group": "Undefined",
       "logo": "https://i.imgur.com/XCTZkoq.png",
@@ -445,6 +837,34 @@
       "urls": [
         {
           "url": "https://voa-ingest.akamaized.net/hls/live/2033878/tvmc08/playlist.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "Xinjiang TV 2",
+      "group": "Undefined",
+      "logo": "https://i.imgur.com/GXFLqxx.png",
+      "tvg_id": "XinjiangTV2.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://110.153.180.106:55555/out_3/index.m3u8",
+          "header": ""
+        }
+      ]
+    },
+    {
+      "name": "Xinjiang TV 3",
+      "group": "Undefined",
+      "logo": "https://i.imgur.com/l8S5qQB.png",
+      "tvg_id": "XinjiangTV3.cn@SD",
+      "chno": "",
+      "catchup": "",
+      "urls": [
+        {
+          "url": "http://110.153.180.106:55555/out_2/index.m3u8",
           "header": ""
         }
       ]
