@@ -33,14 +33,14 @@ scripts/
 python3 scripts/probe_live.py --parse-only          # 只解析，不探测（改 sources.txt 后先这样验格式）
 python3 scripts/probe_live.py                        # 完整探测
 python3 scripts/probe_vod.py
-RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/stable python3 scripts/build_config.py
+RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/release python3 scripts/build_config.py
 ```
 
 ## 在 App 里用
 
 把 `tvbox.json` 的 **stable raw 链接**填进 FongMi 的**点播配置**即可；因为文件里有 `lives`，App 会自动生成直播配置并共用该链接（已在源码中核实 `VodConfig.initLive()`）。
 
-工作流每次探测成功后会提交生成物并强制移动 `stable` 标签，App 固定读取：
+工作流每次探测成功后会提交生成物并强制移动 `release` 分支，App 固定读取：
 
 ```text
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/tvbox.json
