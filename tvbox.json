@@ -4,7 +4,7 @@
     {
       "name": "电视台",
       "ua": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36",
-      "url": "https://raw.githubusercontent.com/luanmuc/beacon-seed/main/live.m3u"
+      "url": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live.m3u"
     }
   ],
   "name": "自订 TV 源",

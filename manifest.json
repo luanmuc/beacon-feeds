@@ -1,0 +1,49 @@
+{
+  "version": "2026.11.21",
+  "updated_at": "2026-11-21T11:37:48Z",
+  "vod_sites": 5,
+  "vod_ok": 5,
+  "vod_skip": 0,
+  "vod_dead": 0,
+  "vod_avg_ms": 8843,
+  "vod_health": [
+    {
+      "key": "pub1",
+      "name": "A站｜星源",
+      "state": "ok",
+      "score": 80,
+      "ms": 29995
+    },
+    {
+      "key": "pub3",
+      "name": "❤红牛资源",
+      "state": "ok",
+      "score": 100,
+      "ms": 1018
+    },
+    {
+      "key": "pub4",
+      "name": "❤无尽资源",
+      "state": "ok",
+      "score": 80,
+      "ms": 5572
+    },
+    {
+      "key": "pub5",
+      "name": "❤光速资源",
+      "state": "ok",
+      "score": 100,
+      "ms": 1145
+    },
+    {
+      "key": "pub6",
+      "name": "❤淘片资源",
+      "state": "ok",
+      "score": 80,
+      "ms": 6487
+    }
+  ],
+  "live_channels": 38,
+  "live_lines": 38,
+  "fastest": 146
+}

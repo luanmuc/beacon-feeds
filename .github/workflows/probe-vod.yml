@@ -8,6 +8,8 @@ on:
     paths:
       - "config/sites.json"
       - "scripts/probe_vod.py"
+      - "scripts/build_config.py"
+      - "scripts/build_manifest.py"
 
 permissions:
   contents: write
@@ -30,38 +32,26 @@ jobs:
         run: python3 scripts/probe_vod.py --input config/sites.json --alive config/sites.alive.json --dead config/sites.dead.json
       - name: Build tvbox.json
         env:
-          RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+          RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/stable
         run: python3 scripts/build_config.py
-      - name: Commit if changed
+      - name: Build manifest and live report
+        run: |
+          set -e
+          python3 scripts/build_manifest.py --tvbox tvbox.json --report live/report.json --alive config/sites.alive.json --dead config/sites.dead.json --out manifest.json
+          if [ -f live/report.json ]; then cp live/report.json live-report.json; fi
+      - name: Commit and move stable tag
         run: |
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config tvbox.json
-          if git diff --cached --quiet; then
+          git add config tvbox.json manifest.json
+          if [ -f live-report.json ]; then git add live-report.json; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(vod): probe $(date -u +%F)"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git push
+          else
             echo "no change"
-            exit 0
           fi
-          git commit -m "chore(vod): probe $(date -u +%F)"
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push
-
-      - name: Publish to tv-seed
-        env:
-          TOKEN: ${{ secrets.TV_SEED_TOKEN }}
-        run: |
-          set -e
-          cd /tmp && rm -rf seed
-          git clone -q "https://x-access-token:${TOKEN}@github.com/luanmuc/beacon-seed.git" seed
-          cp "$GITHUB_WORKSPACE/tvbox.json" seed/tvbox.json
-          if [ -f "$GITHUB_WORKSPACE/live/all.m3u" ]; then cp "$GITHUB_WORKSPACE/live/all.m3u" seed/live.m3u; fi
-          python3 "$GITHUB_WORKSPACE/scripts/build_manifest.py" --tvbox "$GITHUB_WORKSPACE/tvbox.json" --report "$GITHUB_WORKSPACE/live/report.json" --alive "$GITHUB_WORKSPACE/config/sites.alive.json" --dead "$GITHUB_WORKSPACE/config/sites.dead.json" --out seed/manifest.json || true
-          cd seed
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then echo "seed unchanged"; exit 0; fi
-          git commit -q -m "sync: $(date -u +%F_%H:%M)"
-          git push -q
           git tag -f stable
-          git push -f -q origin stable
+          git push -f origin stable

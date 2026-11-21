@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""生成 beacon-seed 的 manifest.json（源规模、更新时间、站点健康评分）。"""
+"""生成源仓 stable 的 manifest.json（源规模、更新时间、站点健康评分）。"""
 import argparse, datetime, json, pathlib
 
 

@@ -6,6 +6,8 @@
 
 ```
 tvbox.json                  # ★ 唯一订阅入口，由 build_config.py 生成，不要手改
+manifest.json               # 源规模/站点健康/直播统计（自动生成）
+live-report.json            # App 设置页读取的直播存活统计（自动生成）
 config/
   base.json                 # 订阅元信息（name/spider/lives/parses/flags），手改
   sites.json                # 影视接口候选（手改/追加）；disabled=true 的不会进产物
@@ -30,12 +32,21 @@ scripts/
 python3 scripts/probe_live.py --parse-only          # 只解析，不探测（改 sources.txt 后先这样验格式）
 python3 scripts/probe_live.py                        # 完整探测
 python3 scripts/probe_vod.py
-RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/main python3 scripts/build_config.py
+RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/stable python3 scripts/build_config.py
 ```
 
 ## 在 App 里用
 
-把 `tvbox.json` 的 raw 链接填进 FongMi 的**点播配置**即可；因为文件里有 `lives`，App 会自动生成直播配置并共用该链接（已在源码中核实 `VodConfig.initLive()`）。
+把 `tvbox.json` 的 **stable raw 链接**填进 FongMi 的**点播配置**即可；因为文件里有 `lives`，App 会自动生成直播配置并共用该链接（已在源码中核实 `VodConfig.initLive()`）。
+
+工作流每次探测成功后会提交生成物并强制移动 `stable` 标签，App 固定读取：
+
+```text
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/tvbox.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live.m3u
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/manifest.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live-report.json
+```
 
 ## 设计规则
 
