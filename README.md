@@ -44,7 +44,7 @@ RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/stable python3 scripts
 
 ```text
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/tvbox.json
-https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live.m3u
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live/all.m3u
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/manifest.json
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/stable/live-report.json
 ```
