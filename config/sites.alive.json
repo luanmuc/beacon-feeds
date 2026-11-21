@@ -9,8 +9,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class']",
-      "at": "2026-11-21T00:17:02Z",
-      "ms": 2386
+      "at": "2026-11-21T00:38:48Z",
+      "ms": 1161
     }
   },
   {
@@ -23,8 +23,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class']",
-      "at": "2026-11-21T00:17:02Z",
-      "ms": 262
+      "at": "2026-11-21T00:38:48Z",
+      "ms": 708
     }
   },
   {
@@ -37,8 +37,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-21T00:17:02Z",
-      "ms": 130
+      "at": "2026-11-21T00:38:48Z",
+      "ms": 298
     }
   },
   {
@@ -51,8 +51,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-21T00:17:02Z",
-      "ms": 65
+      "at": "2026-11-21T00:38:48Z",
+      "ms": 179
     }
   },
   {
@@ -65,8 +65,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'code', 'limit', 'list', 'msg', 'page']",
-      "at": "2026-11-21T00:17:02Z",
-      "ms": 88
+      "at": "2026-11-21T00:38:48Z",
+      "ms": 656
     }
   },
   {
@@ -79,8 +79,8 @@
     "probe": {
       "state": "ok",
       "why": "keys=['class', 'list', 'pagecount', 'pageindex', 'pagesize', 'recordcount']",
-      "at": "2026-11-21T00:17:02Z",
-      "ms": 248
+      "at": "2026-11-21T00:38:48Z",
+      "ms": 643
     }
   },
   {
@@ -94,7 +94,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-21T00:17:02Z",
+      "at": "2026-11-21T00:38:48Z",
       "ms": 0
     }
   },
@@ -109,7 +109,7 @@
     "probe": {
       "state": "skip",
       "why": "disabled",
-      "at": "2026-11-21T00:17:02Z",
+      "at": "2026-11-21T00:38:48Z",
       "ms": 0
     }
   }
