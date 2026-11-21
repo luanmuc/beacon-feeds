@@ -54,8 +54,7 @@ jobs:
           else
             echo "no change"
           fi
-          git tag -f stable
-          git push -f origin stable
+          git push -f origin HEAD:refs/heads/stable
 
       - name: Build health page
         run: python3 scripts/build_health.py
