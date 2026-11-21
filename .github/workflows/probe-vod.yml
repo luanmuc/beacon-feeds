@@ -30,6 +30,8 @@ jobs:
           python-version: "3.12"
       - name: Probe VOD sites
         run: python3 scripts/probe_vod.py --input config/sites.json --alive config/sites.alive.json --dead config/sites.dead.json
+      - name: Build runtime source lists
+        run: python3 scripts/build_sources.py
       - name: Build tvbox.json
         env:
           RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/release
@@ -45,7 +47,7 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config tvbox.json manifest.json live.m3u
+          git add config tvbox.json vod-sites.json manifest.json live.m3u
           if [ -f live-report.json ]; then git add live-report.json; fi
           if ! git diff --cached --quiet; then
             git commit -m "chore(vod): probe $(date -u +%F)"

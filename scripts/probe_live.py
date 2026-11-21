@@ -189,10 +189,37 @@ def write_m3u(path, items):
             lines.append(item["url"] + (("|" + item["header"]) if item["header"] else ""))
     open(path, "w", encoding="utf-8").write("\n".join(lines) + "\n")
 
+
+def write_channels(path, items):
+    """给 QuickJS 直播源的结构化频道数据，保留多线路与请求头。"""
+    channels = []
+    for c in items:
+        channels.append({
+            "name": c.get("name", ""),
+            "group": c.get("group", "未分组"),
+            "logo": c.get("logo", ""),
+            "tvg_id": c.get("tvg_id", ""),
+            "chno": c.get("chno", ""),
+            "catchup": c.get("catchup", ""),
+            "urls": [
+                {"url": item["url"], "header": item.get("header", "")}
+                for item in c.get("urls", [])
+                if item.get("url")
+            ],
+        })
+    payload = {
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "channels": channels,
+    }
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    json.dump(payload, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print(f"写出 {path}：{len(channels)} 个频道")
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", default="live/sources.txt")
     ap.add_argument("--out", default="live/all.m3u")
+    ap.add_argument("--channels", default="live/channels.json")
     ap.add_argument("--report", default="live/report.json")
     ap.add_argument("--parse-only", action="store_true")
     ap.add_argument("--workers", type=int, default=24)
@@ -245,6 +272,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     write_m3u(args.out, merged)
+    write_channels(args.channels, merged)
     json.dump({
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "channels": len(merged),

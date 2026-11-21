@@ -2,83 +2,33 @@
   "flags": [],
   "lives": [
     {
-      "name": "电视台",
+      "api": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/source/beacon-live.js",
+      "ext": {
+        "channels_url": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live/channels.json",
+        "m3u_url": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live/all.m3u",
+        "mode": "live",
+        "report_url": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live-report.json"
+      },
+      "name": "聚合直播",
       "ua": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36",
-      "url": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live/all.m3u"
+      "url": ""
     }
   ],
   "name": "自订 TV 源",
   "parses": [],
   "sites": [
     {
-      "api": "https://xy.183933.xyz/php/acfun.php/provide/vod",
-      "key": "pub1",
-      "name": "A站｜星源",
-      "probe": {
-        "at": "2026-11-21T11:04:55Z",
-        "ms": 2282,
-        "state": "ok",
-        "why": "class-only(1); category=list=42"
+      "api": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/source/beacon-vod.js",
+      "ext": {
+        "mode": "vod",
+        "sites_url": "https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/vod-sites.json"
       },
+      "filterable": 1,
+      "key": "beacon-vod",
+      "name": "聚合影视",
       "quickSearch": 1,
       "searchable": 1,
-      "type": 1
-    },
-    {
-      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
-      "key": "pub3",
-      "name": "❤红牛资源",
-      "probe": {
-        "at": "2026-11-21T11:04:55Z",
-        "ms": 249,
-        "state": "ok",
-        "why": "list=20"
-      },
-      "quickSearch": 1,
-      "searchable": 1,
-      "type": 1
-    },
-    {
-      "api": "https://api.wujinapi.me/api.php/provide/vod/?ac=list",
-      "key": "pub4",
-      "name": "❤无尽资源",
-      "probe": {
-        "at": "2026-11-21T11:04:55Z",
-        "ms": 185,
-        "state": "ok",
-        "why": "list=20"
-      },
-      "quickSearch": 1,
-      "searchable": 1,
-      "type": 1
-    },
-    {
-      "api": "https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/",
-      "key": "pub5",
-      "name": "❤光速资源",
-      "probe": {
-        "at": "2026-11-21T11:04:55Z",
-        "ms": 191,
-        "state": "ok",
-        "why": "list=20"
-      },
-      "quickSearch": 1,
-      "searchable": 1,
-      "type": 1
-    },
-    {
-      "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
-      "key": "pub6",
-      "name": "❤淘片资源",
-      "probe": {
-        "at": "2026-11-21T11:04:55Z",
-        "ms": 618,
-        "state": "ok",
-        "why": "list=30"
-      },
-      "quickSearch": 1,
-      "searchable": 1,
-      "type": 1
+      "type": 3
     }
   ],
   "spider": ""

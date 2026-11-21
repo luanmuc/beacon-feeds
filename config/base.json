@@ -1,10 +1,32 @@
 {
   "name": "自订 TV 源",
   "spider": "",
+  "sites": [
+    {
+      "key": "beacon-vod",
+      "name": "聚合影视",
+      "type": 3,
+      "api": "{RAW_BASE}/source/beacon-vod.js",
+      "ext": {
+        "mode": "vod",
+        "sites_url": "{RAW_BASE}/vod-sites.json"
+      },
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    }
+  ],
   "lives": [
     {
-      "name": "电视台",
-      "url": "{RAW_BASE}/live/all.m3u",
+      "name": "聚合直播",
+      "api": "{RAW_BASE}/source/beacon-live.js",
+      "ext": {
+        "mode": "live",
+        "channels_url": "{RAW_BASE}/live/channels.json",
+        "m3u_url": "{RAW_BASE}/live/all.m3u",
+        "report_url": "{RAW_BASE}/live-report.json"
+      },
+      "url": "",
       "ua": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/120 Mobile Safari/537.36"
     }
   ],

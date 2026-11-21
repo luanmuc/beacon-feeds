@@ -1,26 +1,32 @@
 # 自用电视源订阅（tvbox.json）
 
-一个固定 raw 链接喂给 FongMi/TV：`sites` 是影视接口、`lives` 是电视台 m3u；App 端自动拆成点播/直播两条配置，共用同一 URL。
+一个固定 raw 链接喂给 FongMi/TV。`tvbox.json` 里只挂两个 QuickJS 聚合入口：`sites` 是影视聚合源，`lives` 是直播聚合源；App 端自动拆成点播/直播两条配置，共用同一 URL，不需要常驻服务器。
 
 ## 目录
 
 ```
 tvbox.json                  # ★ 唯一订阅入口，由 build_config.py 生成，不要手改
 manifest.json               # 源规模/站点健康/直播统计（自动生成）
+vod-sites.json              # 探测后的影视接口池，给 beacon-vod.js 读
 live-report.json            # App 设置页读取的直播存活统计（自动生成）
+source/
+  beacon-vod.js             # 影视聚合 QuickJS 源
+  beacon-live.js            # 直播聚合 QuickJS 源
 config/
   base.json                 # 订阅元信息（name/spider/lives/parses/flags），手改
   sites.json                # 影视接口候选（手改/追加）；disabled=true 的不会进产物
   sites.alive.json          # 探测后存活（自动生成）
   sites.dead.json           # 探测后失效（自动生成，人工复核用）
-live.m3u                    # 合并后的直播清单（根文件，App 固定读取）
+live.m3u                    # 合并后的直播清单（兼容旧地址，App 新地址用 live/all.m3u）
 live/
   sources.txt               # 候选 m3u 清单（手改）
   all.m3u                   # 探测+合并后的产物（自动生成）
+  channels.json             # 结构化频道/多线路，给 beacon-live.js 读
   report.json               # 本次探测统计与失效线路（自动生成）
 scripts/
   probe_live.py             # 拉 m3u -> 解析 -> 逐路探测 -> 同名合并
   probe_vod.py              # 影视接口探测（type=3 爬虫无法离线探测，跳过）
+  build_sources.py          # 生成 vod-sites.json
   build_config.py           # 合并生成 tvbox.json + 必填校验
 .github/workflows/
   probe-live.yml            # 每 6 小时
@@ -33,17 +39,21 @@ scripts/
 python3 scripts/probe_live.py --parse-only          # 只解析，不探测（改 sources.txt 后先这样验格式）
 python3 scripts/probe_live.py                        # 完整探测
 python3 scripts/probe_vod.py
+python3 scripts/build_sources.py
 RAW_BASE=https://raw.githubusercontent.com/<owner>/<repo>/release python3 scripts/build_config.py
+python3 scripts/build_manifest.py
 ```
 
 ## 在 App 里用
 
-把 `tvbox.json` 的 **stable raw 链接**填进 FongMi 的**点播配置**即可；因为文件里有 `lives`，App 会自动生成直播配置并共用该链接（已在源码中核实 `VodConfig.initLive()`）。
+把 `tvbox.json` 的 **release raw 链接**填进 FongMi 的**点播配置**即可；因为文件里有 `lives`，App 会自动生成直播配置并共用该链接（已在源码中核实 `VodConfig.initLive()`）。
 
 工作流每次探测成功后会提交生成物并强制移动 `release` 分支，App 固定读取：
 
 ```text
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/tvbox.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/vod-sites.json
+https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live/channels.json
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live/all.m3u
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/manifest.json
 https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live-report.json
@@ -57,6 +67,7 @@ https://raw.githubusercontent.com/luanmuc/beacon-feeds/release/live-report.json
 4. **产物必过校验**：`build_config.py` 校验 sites 的 `key/name/api` 与 lives 的 `name`，失败直接让 CI 变红。
 5. **影视存活不是“能解析 JSON”**：首页/第一个分类必须能出非空 list；只有 `class` 分类壳的站点判失效。
 6. **直播存活不是“HEAD 200”**：必须能取到 M3U8 片单/首片或 FLV 头；401/403/404/HTML 和 RTMP 未探测都不算存活。
+7. **两脚本分离**：`beacon-vod.js` 只管影视接口聚合，`beacon-live.js` 只管频道/线路聚合，各自维护健康状态和回滚，不混在一个文件里。
 
 ## 私密性
 

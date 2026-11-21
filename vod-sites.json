@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-11-21T12:03:25Z",
+  "sites": [
+    {
+      "key": "pub1",
+      "name": "A站｜星源",
+      "api": "https://xy.183933.xyz/php/acfun.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "probe": {
+        "state": "ok",
+        "why": "class-only(1); category=list=42",
+        "at": "2026-11-21T11:04:55Z",
+        "ms": 2282
+      }
+    },
+    {
+      "key": "pub3",
+      "name": "❤红牛资源",
+      "api": "https://www.hongniuzy2.com/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "probe": {
+        "state": "ok",
+        "why": "list=20",
+        "at": "2026-11-21T11:04:55Z",
+        "ms": 249
+      }
+    },
+    {
+      "key": "pub4",
+      "name": "❤无尽资源",
+      "api": "https://api.wujinapi.me/api.php/provide/vod/?ac=list",
+      "searchable": 1,
+      "quickSearch": 1,
+      "probe": {
+        "state": "ok",
+        "why": "list=20",
+        "at": "2026-11-21T11:04:55Z",
+        "ms": 185
+      }
+    },
+    {
+      "key": "pub5",
+      "name": "❤光速资源",
+      "api": "https://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "probe": {
+        "state": "ok",
+        "why": "list=20",
+        "at": "2026-11-21T11:04:55Z",
+        "ms": 191
+      }
+    },
+    {
+      "key": "pub6",
+      "name": "❤淘片资源",
+      "api": "https://taopianapi.com/cjapi/mc/vod/json.html",
+      "searchable": 1,
+      "quickSearch": 1,
+      "probe": {
+        "state": "ok",
+        "why": "list=30",
+        "at": "2026-11-21T11:04:55Z",
+        "ms": 618
+      }
+    }
+  ]
+}

@@ -40,7 +40,8 @@ def check_lives(lives):
 
 def main():
     base = load("config/base.json", {}) or {}
-    sites = load("config/sites.alive.json", None)
+    configured_sites = base.get("sites")
+    sites = configured_sites if isinstance(configured_sites, list) and configured_sites else load("config/sites.alive.json", None)
     if sites is None:
         sites = load("config/sites.json", []) or []
     lives = base.get("lives", [])
@@ -59,7 +60,7 @@ def main():
         "name": base.get("name", "自制订阅"),
         "spider": sub(base.get("spider", "")),
         "lives": sub(lives),
-        "sites": [dict(s) for s in sites if not s.get("disabled")],
+        "sites": sub([dict(s) for s in sites if not s.get("disabled")]),
         "parses": sub(base.get("parses", [])),
         "flags": base.get("flags", []),
     }

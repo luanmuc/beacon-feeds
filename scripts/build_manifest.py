@@ -29,6 +29,7 @@ def health(site, dead=False):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--tvbox', default='tvbox.json')
+    ap.add_argument('--sources', default='vod-sites.json')
     ap.add_argument('--report', default='live/report.json')
     ap.add_argument('--alive', default='config/sites.alive.json')
     ap.add_argument('--dead', default='config/sites.dead.json')
@@ -37,10 +38,14 @@ def main():
 
     now = datetime.datetime.now(datetime.timezone.utc)
     tv = load(args.tvbox)
+    sources = load(args.sources)
     report = load(args.report)
     alive = load(args.alive, [])
     dead = load(args.dead, [])
-    sites = [s for s in tv.get('sites', []) if s.get('type') == 1 and not s.get('disabled')]
+    source_sites = sources.get('sites', []) if isinstance(sources, dict) else []
+    sites = [s for s in source_sites if s.get('key') and not s.get('disabled')]
+    if not sites:
+        sites = [s for s in tv.get('sites', []) if s.get('type') == 1 and not s.get('disabled')]
     merged = {}
     for item in (alive if isinstance(alive, list) else []):
         if item.get('key'):
