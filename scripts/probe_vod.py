@@ -70,20 +70,20 @@ def main():
     alive, dead = [], []
     now = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     for s in sites:
+        start = time.time()
         ok, why = probe(s, args.timeout)
+        ms = int((time.time() - start) * 1000)
         rec = dict(s)
+        rec["probe"] = {"state": "skip" if ok is None else ("ok" if ok else "dead"), "why": why, "at": now, "ms": ms}
         if ok is None:
-            rec["probe"] = {"state": "skip", "why": why, "at": now}
             alive.append(rec)
-            print(f"  ~ {rec.get('key')}: {why}")
+            print(f"  ~ {rec.get('key')}: {why} ({ms}ms)")
         elif ok:
-            rec["probe"] = {"state": "ok", "why": why, "at": now}
             alive.append(rec)
-            print(f"  + {rec.get('key')}: {why}")
+            print(f"  + {rec.get('key')}: {why} ({ms}ms)")
         else:
-            rec["probe"] = {"state": "dead", "why": why, "at": now}
             dead.append(rec)
-            print(f"  - {rec.get('key')}: {why}")
+            print(f"  - {rec.get('key')}: {why} ({ms}ms)")
 
     json.dump(alive, open(args.alive, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     json.dump(dead, open(args.dead, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

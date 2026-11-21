@@ -55,7 +55,7 @@ jobs:
           git clone -q "https://x-access-token:${TOKEN}@github.com/luanmuc/beacon-seed.git" seed
           cp "$GITHUB_WORKSPACE/tvbox.json" seed/tvbox.json
           if [ -f "$GITHUB_WORKSPACE/live/all.m3u" ]; then cp "$GITHUB_WORKSPACE/live/all.m3u" seed/live.m3u; fi
-          python3 "$GITHUB_WORKSPACE/scripts/build_manifest.py" --tvbox "$GITHUB_WORKSPACE/tvbox.json" --report "$GITHUB_WORKSPACE/live/report.json" --out seed/manifest.json || true
+          python3 "$GITHUB_WORKSPACE/scripts/build_manifest.py" --tvbox "$GITHUB_WORKSPACE/tvbox.json" --report "$GITHUB_WORKSPACE/live/report.json" --alive "$GITHUB_WORKSPACE/config/sites.alive.json" --dead "$GITHUB_WORKSPACE/config/sites.dead.json" --out seed/manifest.json || true
           cd seed
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
