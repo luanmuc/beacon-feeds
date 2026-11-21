@@ -5,6 +5,8 @@ on:
     - cron: "0 19 * * *"
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - "config/sites.json"
       - "scripts/probe_vod.py"
@@ -20,6 +22,7 @@ concurrency:
 
 jobs:
   probe:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -50,8 +53,9 @@ jobs:
           git add config tvbox.json vod-sites.json manifest.json live.m3u
           if [ -f live-report.json ]; then git add live-report.json; fi
           if ! git diff --cached --quiet; then
-            git commit -m "chore(vod): probe $(date -u +%F)"
-            git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+            git commit -m "chore(vod): probe $(date -u +%F) [skip ci]"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git merge -Xtheirs --no-edit FETCH_HEAD
             git push
           else
             echo "no change"
