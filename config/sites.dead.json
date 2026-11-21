@@ -9,8 +9,8 @@
     "probe": {
       "state": "dead",
       "why": "class-only(5); category=no-list; keys=['limit', 'list', 'page', 'pagecount', 'total']",
-      "at": "2026-11-21T11:02:28Z",
-      "ms": 6182
+      "at": "2026-11-21T11:04:55Z",
+      "ms": 1106
     }
   }
 ]
